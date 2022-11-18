@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React, { useState } from "react";
+import "./styling.css";
+const App = () => {
+  const link =
+    "https://res.cloudinary.com/gramaseva/image/upload/v1655522064/IMG_20200802_204140_zmplvd.jpg";
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ textAlign: "center" }}>
+      <h1>SEXTANT PROJECT </h1>
+
+      <p title="hi">place cursor on me to display the message</p>
+      <br></br>
+      <a href={link} download>
+        download photo
+      </a>
+      <p contenteditable="true">you can edit me here also try once!</p>
+      <marquee direction="right">FORAGE & CISCO</marquee>
     </div>
   );
-}
+};
 
 export default App;
