@@ -1,19 +1,21 @@
-import React, { useState } from "react";
-import "./styling.css";
-const App = () => {
-  const link =
-    "https://res.cloudinary.com/gramaseva/image/upload/v1655522064/IMG_20200802_204140_zmplvd.jpg";
-  return (
-    <div style={{ textAlign: "center" }}>
-      <h1>SEXTANT PROJECT </h1>
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
-      <p title="hi">place cursor on me to display the message</p>
-      <br></br>
-      <a href={link} download>
-        download photo
-      </a>
-      <p contenteditable="true">you can edit me here also try once!</p>
-      <marquee direction="right">FORAGE & CISCO</marquee>
+const App = () => {
+  const [naresh, setNaresh] = useState([]);
+  useEffect(() => {
+    axios
+      .get(
+        "https://geo.ipify.org/api/v2/country?apiKey=at_LMjp6qJbpfrFg353soh0MfY7CRq1e&ipAddress=8.8.8.8"
+      )
+      .then((response) => setNaresh(response.data));
+  }, []);
+  return (
+    <div>
+      {naresh.map((item) => (
+        <li>{item}</li>
+      ))}
+      ;<h1>jhf</h1>
     </div>
   );
 };
